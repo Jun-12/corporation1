@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+body {
+    background-image: linear-gradient(
+    -60deg,
+    #c7c7c7 25%,
+    #a1abb7 25%, #a1abb7 50%,
+    #c7c7c7 50%, #c7c7c7 75%,
+    #a1abb7 75%, #a1abb7
+  );
+    background-color: rgba(255,255,255,0.8);
+    background-blend-mode: lighten;
+    background-size: 100%;
+}
+
+html {
+    font-family: 'Noto Sans JP', 'Noto Serif', sans-serif;
+    width: 100%;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.wrap {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+}
+
+.fadein {
+    opacity: 0.1;
+    transform: translate(0, 50px);
+    transition: all 500ms;
+}
+.fadein.scrollin {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    padding: 20px;
+}
+
+.nav-box {
+}
+.nav-box li {
+    margin-right: 25px;
+    
+}
+.nav-box a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+li {
+    position: relative;
+}
+
+li:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%) scaleX(0);
+    background: #000;
+    transform-origin: top right;
+    transition: transform .3s ease-in-out;
+}
+
+li:hover:before {
+    transform: translateY(-50%) scaleX(1);
+    transform-origin: top left;
+}
+
+/* main */
+
+.main h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 100px 0;
+}
+
+
+form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+div > input {
+    margin-bottom: 60px;
+    padding: 8px;
+}
+
+label {
+    display: inline-block;
+    width: 30%;
+}
+
+.form-place {
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    width: 65%;
+}
+
+textarea {
+    vertical-align: top;
+    height: 15em;
+    margin-bottom: 30px;
+}
+
+.button-submit {
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+.button {
+    padding: 20px 40px;
+    background-color: rgb(0, 0, 120);
+    margin: 30px 0;
+    border-radius: 10px;
+    
+}
+.button:hover {
+    background-color: rgb(180, 180, 180);
+    color: rgb(0, 0, 120);
+    transition: .5s;
+}
+
+footer > p {
+    background-color: #fff;
+    text-align: center;
+    color: #777777;
+    font-size: 10px;
+    padding: 40px 0;
+}
