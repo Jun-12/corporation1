@@ -133,6 +133,8 @@ main > p {
     margin: 30px;
     text-align: center;
 }
+/* imgはitemクラスのwidthより大きい場合は全て同じサイズになるので問題ないのですが
+widthより小さい場合は２枚目の画像のように要素も縮まってしまっているので画像にwidthとheightを指定してあげることをお勧めいたします！ */
 .item img, .item p {
     margin-bottom: 10px;
     display: block;

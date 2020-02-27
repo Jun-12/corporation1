@@ -141,6 +141,8 @@ textarea {
     vertical-align: top;
     height: 15em;
     margin-bottom: 30px;
+    /* 以下のスタイルを加えるとテキストエリアのサイズをユーザーが変更することができなくなります */
+    resize: none;
 }
 
 .button-submit {
