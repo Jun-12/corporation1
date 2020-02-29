@@ -66,6 +66,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    background-color: #fff;
 }
 
 .logo {
@@ -105,9 +106,13 @@ li:hover:before {
     transform-origin: top left;
 }
 
+#hamburger, .menu-content {
+    display: none;
+}
+
 /* main */
 
-.main h1 {
+.main h2 {
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
@@ -171,3 +176,109 @@ footer > p {
     font-size: 10px;
     padding: 40px 0;
 }
+
+@media screen and (max-width: 820px) {
+    .header-nav {
+        display: none;
+    }
+    
+    #hamburger {
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 999;
+        top: 15px;
+        right: 20px;
+        transition: .4s;
+    }
+    
+    #hamburger span {
+        display: block;
+        width: 35px;
+        height: 2px;
+        background-color: #000;
+        transition: .8s;
+    }
+    
+    #hamburger span:nth-of-type(1) {
+        position: absolute;
+        top: 15px;
+        left: 2px;
+        color: #000;
+    }
+    
+    #hamburger span:nth-of-type(2) {
+        position: absolute;
+        top: 25px;
+        left: 2px;
+    }
+    
+    #hamburger span:nth-of-type(3) {
+        position: absolute;
+        top: 35px;
+        left: 2px;
+    }
+    
+    .menu-content.open .menu-content_inner {
+        display: block;
+    }
+    
+    .menu-content.open .menu-title {
+        margin: 40px 20px;
+        font-size: 2.2rem;
+        color: #333;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .menu-content.open {
+        display: block;
+        width: calc(100% - 80px);
+        height: 100%;
+        text-align: center;
+        transition: .8s;
+        position: fixed;
+        top: 0;
+        left: calc(-100% - 80px);
+        background-color: #fff;
+        color: #333;
+        box-shadow: 80px 0 rgba(38, 98, 213, .3);
+        z-index: 100;
+    }
+    
+    .menu-content.open li a {
+        color: #333;
+        margin: 15px;
+        padding: 5px;
+        border-bottom: 0.5px solid #2662D5;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .menu-content.open ul {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .menu-content.open {
+        left: 0;
+    }
+    
+    #hamburger.active span:nth-of-type(1) {
+        top: 20px;
+        transform: rotate(45deg);
+    }
+    
+    #hamburger.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    
+    #hamburger.active span:nth-of-type(3) {
+        top: 20px;
+        transform: rotate(-45deg);
+    }
+    
+    
+    }

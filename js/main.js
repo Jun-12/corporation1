@@ -9,4 +9,9 @@ $(function() {
             }
         });
     });
+
+    $("#hamburger").on("click", function () {
+        $(".menu-content").toggleClass("open");
+        $(this).toggleClass("active");
+    });
 });

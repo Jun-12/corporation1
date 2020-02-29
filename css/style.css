@@ -67,6 +67,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    background-color: #fff;
 }
 
 .logo {
@@ -84,6 +85,12 @@ header {
     font-weight: bold;
 }
 
+#hamburger, .menu-content {
+    display: none;
+}
+
+
+/* main */
 main {
     position: relative;
     width: 100vw;
@@ -101,7 +108,7 @@ main {
     left: 0;
     right: 0;
 }
-.catch h1 {
+.catch h2 {
     font-size: 70px;
     line-height: 100px;
 }
@@ -132,21 +139,24 @@ li:hover:before {
     transform-origin: top left;
 }
 
-/* about */
-/* about service recruitには全て同じスタイルを当てているようなので
-sectionタグを用いるか、同じクラスを作ることをお勧めします！ */
-#about  {
+
+/* about service recruit 共通部分*/
+section {
     position: relative;
     margin: 300px 0;
 }
-/* こちらも同様にimgタグに共通のクラスを当ててあげることをお勧めします！ */
-#about img {
+
+.image img {
     width: 80%;
-    
 }
-/* こちらはスタイルのみ別で共通のクラスを当て、
-要素の位置を指定するCSSと分けると可読性も上がりよりスマートなコードになります！ */
-#about a {
+
+#about a:hover, #service a:hover, #recruit a:hover {
+    color: #fff;
+    background-color: rgb(11, 11, 104);
+    transition: 0.5s;
+}
+
+.left a {
     position: absolute;
     border: 1px solid #f5f5f5;
     background-color: #fff;
@@ -158,75 +168,38 @@ sectionタグを用いるか、同じクラスを作ることをお勧めしま�
     top: 30%;
     left: 54%;
 }
-/* こちらは共通のスタイルなのですがserviceにも同じ記述があります */
-.box h1 {
+
+.box h2 {
     font-size: 50px;
     margin-bottom: 15px;
 }
-/* こちらも同様にimgタグに共通のクラスを当ててあげることをお勧めします！ */
-#about a:hover {
-    transition: 0.5s;
-    color: #fff;
-    background-color: rgb(11, 11, 104);
+.box p {
 }
+
+/* about */
+/* about service recruitには全て同じスタイルを当てているようなので
+sectionタグを用いるか、同じクラスを作ることをお勧めします！ */
+/* こちらも同様にimgタグに共通のクラスを当ててあげることをお勧めします！ */
+/* こちらはスタイルのみ別で共通のクラスを当て、
+要素の位置を指定するCSSと分けると可読性も上がりよりスマートなコードになります！ */
+/* こちらは共通のスタイルなのですがserviceにも同じ記述があります */
+/* こちらも同様にimgタグに共通のクラスを当ててあげることをお勧めします！ */
 
 
 /* service */
-#service {
-    position: relative;
-    margin: 300px 0;
-}
-#service a {
+.right a {
     position: absolute;
     border: 1px solid #f5f5f5;
     background-color: #fff;
     width: 500px;
     height: 310px;
     padding: 50px 100px 80px 50px;
-    right: 60%;
+    right: 55%;
     top: 18%;
     z-index: 2;
 }
-#service img {
-    width: 80%;
-}
-#service .image {
+.right .image {
     text-align: end;
-}
-#service a:hover {
-    transition: 0.5s;
-    color: #fff;
-    background-color: rgb(11, 11, 104);
-}
-
-
-/* recruit */
-#recruit  {
-    position: relative;
-    margin: 300px 0;
-}
-#recruit img {
-    width: 80%;
-    
-}
-#recruit a {
-    position: absolute;
-    border: 1px solid #f5f5f5;
-    background-color: #fff;
-    width: 500px;
-    height: 310px;
-    padding: 50px 100px 80px 50px;
-    top: 30%;
-    left: 54%;
-}
-.box h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-#recruit a:hover {
-    transition: 0.5s;
-    color: #fff;
-    background-color: rgb(11, 11, 104);
 }
 
 
@@ -262,7 +235,7 @@ sectionタグを用いるか、同じクラスを作ることをお勧めしま�
     font-size: 40px;
     font-weight: normal;
     /* 余白を加えると気はmarginを使用することをお勧めします！ */
-    padding: 120px 0 100px;
+    margin: 120px 0 100px;
 }
 .is-form a {
     color: #fff;
@@ -305,4 +278,136 @@ footer > p {
     color: #777777;
     font-size: 10px;
     padding: 40px 0;
+}
+
+@media screen and (max-width: 1115px) {
+    .left img, .right img {
+        display: block;
+        width: 80%;
+        height: 300px;
+        margin: 0 auto;
+    }
+    a.color {
+        width: 50%;
+        height: 300px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding: 0;
+    }
+    .box {
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 820px) {
+.header-nav {
+    display: none;
+}
+
+#hamburger {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+    top: 15px;
+    right: 20px;
+    transition: .4s;
+}
+
+#hamburger span {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #000;
+    transition: .8s;
+}
+
+#hamburger span:nth-of-type(1) {
+    position: absolute;
+    top: 15px;
+    left: 2px;
+    color: #000;
+}
+
+#hamburger span:nth-of-type(2) {
+    position: absolute;
+    top: 25px;
+    left: 2px;
+}
+
+#hamburger span:nth-of-type(3) {
+    position: absolute;
+    top: 35px;
+    left: 2px;
+}
+
+.menu-content.open .menu-content_inner {
+    display: block;
+}
+
+.menu-content.open .menu-title {
+    margin: 40px 20px;
+    font-size: 2.2rem;
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+.menu-content.open {
+    display: block;
+    width: calc(100% - 80px);
+    height: 100%;
+    text-align: center;
+    transition: .8s;
+    position: fixed;
+    top: 0;
+    left: calc(-100% - 80px);
+    background-color: #fff;
+    color: #333;
+    box-shadow: 80px 0 rgba(38, 98, 213, .3);
+    z-index: 100;
+}
+
+.menu-content.open li a {
+    color: #333;
+    margin: 15px;
+    padding: 5px;
+    border-bottom: 0.5px solid #2662D5;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-content.open ul {
+    width: 100%;
+    text-align: left;
+}
+
+.menu-content.open {
+    left: 0;
+}
+
+#hamburger.active span:nth-of-type(1) {
+    top: 20px;
+    transform: rotate(45deg);
+}
+
+#hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#hamburger.active span:nth-of-type(3) {
+    top: 20px;
+    transform: rotate(-45deg);
+}
+
+
 }
